@@ -14,6 +14,13 @@ namespace Authors.Controllers
         {
             var books = _commonService.GetAllBooks();
             return View(books);
+        }
+        
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var book = _commonService.GetBook(id);
+            return View(book);
         }      
     }
 }

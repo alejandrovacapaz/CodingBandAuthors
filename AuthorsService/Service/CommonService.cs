@@ -2,6 +2,7 @@
 using AuthorsDTOs;
 using AuthorsService.InterfaceService;
 using AuthorsDATA.InterfaceRepository;
+using System;
 
 namespace AuthorsService.Service
 {
@@ -14,9 +15,24 @@ namespace AuthorsService.Service
             _commonRepository = commonRepository;
         }
 
+        public bool AddBook(BookDetailABM book)
+        {
+            return _commonRepository.AddBook(book);
+        }
+
+        public bool EditBook(BookDetailABM book)
+        {
+            return _commonRepository.EditBook(book);
+        }
+
         public List<BookDetail> GetAllBooks()
         {
             return _commonRepository.GetAllBooks();
+        }
+
+        public BookDetailABM GetBook(int id)
+        {
+            return _commonRepository.GetBook(id);
         }
     }
 }
